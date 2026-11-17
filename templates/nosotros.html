@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Nosotros | Mexican Food{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nosotros.css') }}" />
+{% endblock %}
+
+{% block content %}
+<section class="about-section about-page">
+  <div class="about-image" role="img" aria-label="Ingredientes frescos para preparar comida mexicana">
+    <div class="image-label"><span>¡Qué rico!</span><b>✳</b></div>
+  </div>
+  <div class="about-copy">
+    <p class="eyebrow eyebrow-light"><span></span> El sabor nos une</p>
+    <h1>Hecho con ganas.<br />Servido con <span>cariño.</span></h1>
+    <p>En Mexican Food celebramos esos sabores que alegran el día. Preparamos comida rápida inspirada en México, con ingredientes frescos y mucho gusto, aquí en Juigalpa.</p>
+    <a class="button button-light" href="{{ url_for('menu') }}">Conoce nuestro menú <span aria-hidden="true">→</span></a>
+    <span class="about-decoration" aria-hidden="true">¡</span>
+  </div>
+</section>
+<section class="values-section section-wrap">
+  <p class="eyebrow"><span></span> Lo que nos mueve</p>
+  <h2>El gusto está en los <span>detalles.</span></h2>
+  <div class="values-grid">
+    <article><span>01</span><h3>Mucho sabor</h3><p>Nos inspiran los sabores mexicanos y las ganas de preparar algo rico.</p></article>
+    <article><span>02</span><h3>Recién preparado</h3><p>Preparamos cada pedido al momento para que lo disfrutes como se debe.</p></article>
+    <article><span>03</span><h3>Hecho con cariño</h3><p>Somos una comidería de Juigalpa que disfruta compartir buena comida.</p></article>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mexican Food: antojitos mexicanos preparados al momento en Juigalpa, Chontales." />
+    <meta name="theme-color" content="#f7f1e7" />
+    <title>{% block title %}Mexican Food | Sabor que se disfruta{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    {% block page_styles %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/common.js') }}" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="Mexican Food, inicio">
+        <span class="brand-mark" aria-hidden="true">M<span>F</span></span>
+        <span class="brand-name">mexican<span>food</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span class="sr-only">Abrir menú</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="{{ url_for('home') }}" {% if request.endpoint == 'home' %}aria-current="page"{% endif %}>Inicio</a>
+        <a href="{{ url_for('menu') }}" {% if request.endpoint == 'menu' %}aria-current="page"{% endif %}>Menú</a>
+        <a href="{{ url_for('about') }}" {% if request.endpoint == 'about' %}aria-current="page"{% endif %}>Nosotros</a>
+        <a href="{{ url_for('visit') }}" {% if request.endpoint == 'visit' %}aria-current="page"{% endif %}>Visítanos</a>
+        <a class="nav-order" href="{{ url_for('menu') }}">Pedir ahora <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="{{ url_for('home') }}">
+        <span class="brand-mark" aria-hidden="true">M<span>F</span></span>
+        <span class="brand-name">mexican<span>food</span></span>
+      </a>
+      <p>Mucho sabor, aquí en Juigalpa.</p>
+      <a class="back-top" href="{{ url_for('home') }}">Volver al inicio ↑</a>
+      <small>© <span id="year"></span> Mexican Food</small>
+    </footer>
+    {% block page_scripts %}{% endblock %}
+  </body>
+</html>

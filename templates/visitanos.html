@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Visítanos | Mexican Food{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/visitanos.css') }}" />
+{% endblock %}
+
+{% block content %}
+<section class="visit-section visit-page section-wrap">
+  <div class="visit-copy">
+    <p class="eyebrow"><span></span> Estamos cerca</p>
+    <h1>Tu próximo<br />antojo queda <span>aquí.</span></h1>
+    <p>Encuéntranos en Juigalpa, Chontales. Pasa por algo rico y disfruta el sabor de Mexican Food.</p>
+    <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&query=restaurante+Juigalpa+Chontales" target="_blank" rel="noreferrer">Cómo llegar <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="visit-card">
+    <div class="visit-icon" aria-hidden="true">⌖</div>
+    <p class="visit-label">Ven a visitarnos</p>
+    <h2>Juigalpa,<br />Chontales</h2>
+    <div class="visit-divider"></div>
+    <p>¿Tienes una pregunta o quieres hacer un pedido?</p>
+    <a class="visit-contact" href="https://wa.me/?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Mexican%20Food%20en%20Juigalpa." target="_blank" rel="noreferrer">Escríbenos por WhatsApp <span aria-hidden="true">↗</span></a>
+  </div>
+  <span class="visit-sparkle" aria-hidden="true">✳</span>
+</section>
+<section class="contact-banner">
+  <p>¿Ya te dio hambre?</p>
+  <a href="{{ url_for('menu') }}">Mira lo que tenemos en el menú <span aria-hidden="true">→</span></a>
+</section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Menú | Mexican Food{% endblock %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}" />
+{% endblock %}
+
+{% block content %}
+<section class="menu-section section-wrap">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow"><span></span> Para ese antojo</p>
+      <h1 class="page-title">Lo bueno está<br class="mobile-break" /> en el <span>menú.</span></h1>
+    </div>
+    <p class="section-intro">Recetas con sabor, porciones para disfrutar y opciones para cada antojo.</p>
+  </div>
+  <div class="menu-filters" role="group" aria-label="Filtrar menú">
+    <button class="filter-button active" type="button" data-filter="todos" aria-pressed="true">Todo</button>
+    <button class="filter-button" type="button" data-filter="favoritos" aria-pressed="false">Favoritos</button>
+    <button class="filter-button" type="button" data-filter="para-compartir" aria-pressed="false">Para compartir</button>
+  </div>
+  <div class="menu-grid">
+    <article class="menu-card" data-category="favoritos">
+      <div class="dish-image dish-tacos" role="img" aria-label="Tacos con carne y vegetales frescos"></div>
+      <div class="dish-info"><div><p class="dish-type">El clásico</p><h2>Tacos mexicanos</h2></div><span class="dish-number">01</span></div>
+      <p class="dish-description">Tortilla, carne sazonada, vegetales frescos y toda la actitud.</p>
+      <a class="dish-order" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20unos%20Tacos%20mexicanos%20de%20Mexican%20Food." target="_blank" rel="noreferrer">Pedir este <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="menu-card" data-category="favoritos para-compartir">
+      <div class="dish-image dish-nachos" role="img" aria-label="Nachos para compartir con queso y salsa"></div>
+      <div class="dish-info"><div><p class="dish-type">Para compartir</p><h2>Nachos con todo</h2></div><span class="dish-number">02</span></div>
+      <p class="dish-description">Crujientes, llenos de sabor y perfectos para compartir.</p>
+      <a class="dish-order" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20unos%20Nachos%20con%20todo%20de%20Mexican%20Food." target="_blank" rel="noreferrer">Pedir este <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="menu-card" data-category="para-compartir">
+      <div class="dish-image dish-quesadilla" role="img" aria-label="Quesadilla dorada con queso derretido"></div>
+      <div class="dish-info"><div><p class="dish-type">Recién hecha</p><h2>Quesadilla</h2></div><span class="dish-number">03</span></div>
+      <p class="dish-description">Doradita por fuera, con queso derretido en cada mordida.</p>
+      <a class="dish-order" href="https://wa.me/?text=Hola%2C%20quiero%20pedir%20una%20Quesadilla%20de%20Mexican%20Food." target="_blank" rel="noreferrer">Pedir este <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <p class="menu-note">¿Se te antoja algo más? <a href="{{ url_for('visit') }}">Escríbenos y pregunta por nuestras opciones <span aria-hidden="true">→</span></a></p>
+</section>
+{% endblock %}
+
+{% block page_scripts %}
+<script src="{{ url_for('static', filename='js/menu.js') }}" defer></script>
+{% endblock %}

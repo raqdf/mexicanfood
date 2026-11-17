@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+{% endblock %}
+
+{% block content %}
+<section class="hero" id="inicio">
+  <div class="hero-copy">
+    <p class="eyebrow"><span></span> Sabor mexicano en Juigalpa</p>
+    <h1>Un antojo.<br />Un <span>buen taco.</span><br />Y se arregla el día.</h1>
+    <p class="hero-description">
+      Comida rápida con mucho sabor, ingredientes frescos y ese toque mexicano que siempre se antoja.
+    </p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ url_for('menu') }}">Explorar el menú <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="{{ url_for('about') }}"><span class="play-icon" aria-hidden="true">▶</span> Conócenos</a>
+    </div>
+    <div class="hero-note">
+      <span class="note-stars" aria-label="Cinco estrellas">★★★★★</span>
+      <span>Hecho al momento, para disfrutar sin prisa.</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-image" role="img" aria-label="Tacos mexicanos recién preparados"></div>
+    <div class="hero-sticker"><span>¡Puro</span><strong>sabor!</strong><i aria-hidden="true">✳</i></div>
+    <div class="hero-caption"><span class="caption-line"></span><span>De nuestra cocina<br />a tu mesa</span></div>
+    <span class="hero-sparkle sparkle-one" aria-hidden="true">✳</span>
+    <span class="hero-sparkle sparkle-two" aria-hidden="true">✦</span>
+  </div>
+  <a class="scroll-cue" href="{{ url_for('menu') }}"><span></span> Descubre nuestro menú</a>
+</section>
+{% endblock %}

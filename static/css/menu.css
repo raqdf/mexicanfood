@@ -1,0 +1,50 @@
+.menu-section { padding-top: 91px; padding-bottom: 98px; background: var(--paper); }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+.page-title { margin: 0; font: 700 clamp(37px, 4vw, 53px)/1.04 var(--display); letter-spacing: -2px; }
+.page-title span { color: var(--red); }
+.section-intro { max-width: 305px; margin: 0 0 7px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.mobile-break { display: none; }
+.menu-filters { display: flex; gap: 8px; margin: 37px 0 24px; }
+.filter-button { border: 1px solid var(--line); background: transparent; padding: 9px 16px; color: #706b62; font-size: 10px; cursor: pointer; transition: .2s; }
+.filter-button:hover, .filter-button.active { border-color: var(--ink); background: var(--ink); color: white; }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.menu-card { min-width: 0; padding-bottom: 18px; border-bottom: 1px solid var(--line); transition: transform .25s ease; }
+.menu-card:hover { transform: translateY(-4px); }
+.menu-card[hidden] { display: none; }
+.dish-image { height: 222px; margin-bottom: 18px; background-color: #dac4a4; background-position: center; background-size: cover; transition: transform .45s ease; }
+.menu-card:hover .dish-image { transform: scale(1.035); }
+.dish-tacos { background-image: url("https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80"); }
+.dish-nachos { background-image: url("https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=800&q=80"); }
+.dish-quesadilla { background-image: url("https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=800&q=80"); }
+.dish-info { display: flex; justify-content: space-between; align-items: center; }
+.dish-type { margin: 0 0 5px; color: var(--red); text-transform: uppercase; letter-spacing: 1.2px; font-size: 9px; font-weight: 700; }
+.dish-info h2 { margin: 0; font: 600 21px var(--display); letter-spacing: -.4px; }
+.dish-number { color: #b6afa4; font: 500 12px var(--display); }
+.dish-description { min-height: 40px; margin: 10px 0 14px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.dish-order { display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--line); font-size: 10px; font-weight: 700; }
+.dish-order span { color: var(--red); font-size: 15px; }
+.dish-order:hover { color: var(--red); }
+.menu-note { margin: 30px 0 0; color: var(--muted); text-align: center; font-size: 11px; }
+.menu-note a { color: var(--red); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .dish-image { height: 180px; }
+}
+@media (max-width: 650px) {
+  .menu-section { padding-top: 68px; padding-bottom: 70px; }
+  .section-heading { display: block; }
+  .page-title { font-size: 43px; }
+  .mobile-break { display: block; }
+  .section-intro { margin-top: 15px; font-size: 12px; }
+  .menu-filters { gap: 6px; margin: 25px 0 20px; }
+  .filter-button { padding: 9px 12px; font-size: 9px; }
+  .menu-grid { grid-template-columns: 1fr; gap: 27px; }
+  .menu-card { display: grid; grid-template-columns: 112px 1fr; column-gap: 16px; }
+  .dish-image { grid-row: span 4; width: 112px; height: 126px; margin: 0; }
+  .dish-info { align-items: start; }
+  .dish-info h2 { font-size: 18px; }
+  .dish-type { font-size: 8px; }
+  .dish-description { min-height: 0; margin: 6px 0 8px; font-size: 10px; }
+  .dish-order { padding-top: 7px; font-size: 9px; }
+  .menu-note { line-height: 1.8; }
+}
