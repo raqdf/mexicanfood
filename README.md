@@ -32,3 +32,14 @@ py app.py
 ```
 
 Abre http://127.0.0.1:5000 en el navegador. Detén el servidor con `Ctrl+C`.
+
+## Desplegar en Render
+
+El proyecto incluye `render.yaml` para crear un servicio web gratuito en Render.
+
+1. Sube los cambios a GitHub.
+2. En Render, selecciona **New > Blueprint**.
+3. Conecta `raqdf/mexicanfood` y confirma el despliegue del servicio `mexicanfood`.
+
+Render instalará las dependencias y ejecutará Gunicorn. Los cambios futuros
+subidos a `main` se desplegarán automáticamente.
